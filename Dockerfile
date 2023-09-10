@@ -9,7 +9,7 @@ RUN apt-get update -qy && \
 
 RUN git clone -b Linux https://github.com/nicehash/nheqminer.git
 
-#RUN cd nheqminer/cpu_xenoncat/Linux/asm/ && sh assemble.sh && cd ../../../Linux_cmake/nheqminer_cpu && cmake . && make
+RUN cd nheqminer/cpu_xenoncat/Linux/asm/ && sh assemble.sh && cd ../../../Linux_cmake/nheqminer_cpu && cmake . && make
 # If you compile in the container you are bound to the processor on which it is created, which causes errors
 # and illegal instructions on some - so I moved compilation to the startup phase and was able to deploy
 # on all workers ranging from i5 to i7
