@@ -23,12 +23,12 @@ echo "WorkerID: ${BTC_WORKER_ID}"
 echo "****************************************************"
 echo "Threads: ${BTC_THREADS}"
 echo
-echo "Compiling for current host processor..."
-cd /root/nheqminer/cpu_xenoncat/Linux/asm/
-sh assemble.sh 
-cd ../../../Linux_cmake/nheqminer_cpu 
-cmake . 
-make
+#echo "Compiling for current host processor..."
+#cd /root/nheqminer/cpu_xenoncat/Linux/asm/
+#sh assemble.sh 
+#cd ../../../Linux_cmake/nheqminer_cpu 
+#cmake . 
+#make
 
 echo
 echo "****************************************************"
