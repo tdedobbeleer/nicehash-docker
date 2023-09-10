@@ -22,4 +22,4 @@ jobs:
       - checkout
       - run:
           name: docker-deploy
-          command: sh ./scripts/docker_release.sh
+          command: sh ./docker-release.sh
