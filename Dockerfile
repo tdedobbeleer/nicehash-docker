@@ -14,7 +14,7 @@ RUN git clone -b Linux https://github.com/ZclassicDev/GCEQminer.git
 # and illegal instructions on some - so I moved compilation to the startup phase and was able to deploy
 # on all workers ranging from i5 to i7
 
-RUN cd nheqminer && mkdir build && cd build && cmake ../nheqminer && make -j $(nproc)
+RUN cd GCEQminer && mkdir build && cd build && cmake ../GCEQminer && make -j $(nproc)
 
 COPY start.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/start.sh
