@@ -7,14 +7,18 @@ RUN apt-get update -qy && \
     apt-get install -qy cmake build-essential libboost-all-dev git ca-certificates \		
     --no-install-recommends
 
-RUN git clone -b Linux https://github.com/ZclassicDev/GCEQminer.git
+RUN git clone -b Linux https://github.com/ZclassicDev/GCEQminer.git nheqminer
 
 #RUN cd nheqminer/cpu_xenoncat/Linux/asm/ && sh assemble.sh && cd ../../../Linux_cmake/nheqminer_cpu && cmake . && make
 # If you compile in the container you are bound to the processor on which it is created, which causes errors
 # and illegal instructions on some - so I moved compilation to the startup phase and was able to deploy
 # on all workers ranging from i5 to i7
 
-RUN cd GCEQminer && mkdir build && cd build && cmake ../GCEQminer && make -j $(nproc)
+RUN cd nheqminer
+RUN mkdir build
+RUN cd build 
+RUN cmake ../nheqminer
+RUN make -j $(nproc)
 
 COPY start.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/start.sh
